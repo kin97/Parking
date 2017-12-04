@@ -39,21 +39,36 @@ class Parking {
             return -1;
         }
     }
+    /**
+     * @description Nos devuelve true si el coche esta en el parking o false si no esta
+     * @param {String} matricula Coche a buscar
+     * @return {boolean}
+     */
+    buscarCoche(matricula) {
+        console.log("dfas")
+        if ((this.tunelLavado.indexOf(matricula) >= 0) || (this.coches.indexOf(matricula) >= 0)) {
+            return true
+        } else {
+            return false
+        }
 
+    }
 }
 let parking = new Parking(2);
-let coche1={
-    matricula:"G321234",
+let coche1 = {
+    matricula: "G321234",
     lavado: true
 }
-let coche2={
-    matricula:"G321235",
-    lavado: false}
-let coche3={
-    matricula:"G321236",
+let coche2 = {
+    matricula: "G321235",
+    lavado: false
+}
+let coche3 = {
+    matricula: "G321236",
     lavado: false
 }
 console.log(parking.MeterCoche(coche1))
 console.log(parking.MeterCoche(coche2))
 console.log(parking.MeterCoche(coche1))
 console.log(parking)
+console.log(parking.buscarCoche("G321235"))
